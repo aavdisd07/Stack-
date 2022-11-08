@@ -1,0 +1,106 @@
+#include <stdio.h>
+#include<stdlib.h>
+int top = -1;
+
+const int size = 5;
+int arr[5];
+int push(int x);
+void pop();
+void show();
+int main()
+{
+   show();
+   printf("\n\n");
+   push(10);
+   printf("10 is push\n");
+   show();
+   printf("\n\n");
+   push(20);
+   printf("20 is push\n");
+   show();
+   printf("\n\n");
+   push(30);
+   printf("30 is push\n");
+   show();
+   printf("\n\n");
+   printf("\n\n");
+   push(40);
+   printf("\n\n");
+   printf("40 is push\n");
+   show();
+   push(50);
+   printf("\n50 is push\n");
+   show();
+   printf("\n\n");
+   push(80);
+   show();
+   push(90);
+    printf("\t\n");
+   pop();
+   show();
+   printf("\t\n");
+   pop();
+   show();
+   printf("\n\n");
+   pop();
+   show();
+   pop();
+   show();
+   pop();
+   show();
+   pop();
+   show();
+   pop();
+   show();
+   printf("\n*");
+   push(111);
+   show();
+   push(123);
+   show();
+  
+
+   return 0;
+}
+int push(int x)
+{
+   if (top == size - 1)
+   {
+      printf("Overflow!!\n");
+   }
+   if (top < size-1)
+   {
+      arr[top + 1] = x;
+      top++;
+   }
+   else
+   {
+      printf("\n%d can not insert bcoz stack is full\n", x);
+   }
+   return 0;
+}
+void pop()
+{
+
+   if (top == -1)
+   {
+      printf("\nUnderflow!!\n");
+   }
+
+   else
+   {
+
+      printf("%d is popped\n", arr[top]);
+
+      top--;
+   }
+}
+void show()
+{
+ if(top!=-1||top<size-1)
+      for(int i =top; i > -1; i--)
+      {
+         printf("%d", arr[i]);
+         printf("\n");
+      }
+      else exit(0);
+}
