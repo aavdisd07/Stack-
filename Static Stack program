@@ -1,3 +1,5 @@
+//STACK BEGINNING PROGRAM USING ARRAY------>>>>>>>>>>>>
+
 #include <stdio.h>
 #include<stdlib.h>
 int top = -1;
