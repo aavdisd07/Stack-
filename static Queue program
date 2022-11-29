@@ -1,0 +1,65 @@
+#include <stdio.h>
+#define size 10
+int arr[size];
+int front = -1;
+int rear = -1;
+
+void push()
+{
+  int additem;
+
+  if (rear == size - 1)
+    printf("queue overflow\n");
+  else
+  {
+    if (front == -1)
+      front = 0;
+    printf("Enter the element to insert\n");
+    scanf("%d", &additem);
+    rear = rear + 1;
+    arr[rear] = additem;
+  }
+}
+void delete ()
+{
+  if (front == -1 || front > rear)
+  {
+    printf("Queue underflow\n");
+  }
+  else
+  {
+    printf("%d is deleted\n", arr[front]);
+    front = front + 1;
+  }
+}
+void display()
+{
+  if (front == -1 || front > rear)
+  {
+    printf("Queue is empty \n");
+  }
+  else
+    printf("Queue is ----->>>>>");
+
+  for (int i = front; i <= rear; i++)
+  {
+    printf("%d\t", arr[i]);
+  }
+  printf("\n");
+}
+int main()
+{
+  push();
+  push();
+  push();
+  display();
+  delete ();
+  printf("\n");
+  display();
+  delete ();
+  printf("\n");
+  display();
+  delete ();
+  printf("\n");
+  display();
+}
